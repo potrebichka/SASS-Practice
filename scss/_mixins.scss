@@ -1,25 +1,31 @@
 @mixin warning {
-    background-color: orange;
-    color: #fff;
+  background-color: orange;
+  color: #fff;
+}
+
+@mixin box-shadow($shadows...) {
+  box-shadow: $shadows;
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+}
+
+@mixin large-text {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+@mixin rounded($radius: 6px) {
+  border-radius: $radius;
+}
+
+@mixin box($radius: 6px, $border: 1px solid #000) {
+  @include rounded($radius);
+  border: $border;
+}
+
+@mixin fancy-links {
+  a {
+    font-style: italic;
+    text-decoration: none;
   }
-  
-  @mixin large-text {
-    font-size: 22px;
-    font-weight: bold;
-  }
-  
-  @mixin rounded {
-    border-radius: 6px;
-  }
-  
-  @mixin box {
-    @include rounded;
-    border: 1px solid #333;
-  }
-  
-  @mixin fancy-links {
-    a {
-      font-style: italic;
-      text-decoration: none;
-    }
-  }
+}
