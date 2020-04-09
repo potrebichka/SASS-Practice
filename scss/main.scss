@@ -1,5 +1,8 @@
 @import "partials/variables", "partials/mixins";
 
+@include google-font("Alegreya+Sans");
+@include google-font("Titillium+Web");
+
 @include fancy-links;
 
 body {
