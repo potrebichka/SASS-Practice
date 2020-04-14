@@ -1,37 +1,26 @@
-@mixin tiny-screens() {
-  @media only screen and (max-width: 320px) {
-    @content;
-  }
-}
-
-@mixin small-screens() {
-  @media only screen and (max-width: 480px) {
-    @content;
-  }
-}
-@mixin medium-screens() {
-  @media only screen and (max-width: 680px) {
-    @content;
-  }
-}
-@mixin large-screens() {
-  @media only screen and (max-width: 960px) {
-    @content;
-  }
-}
-
-@import "partials/variables", "partials/mixins";
+@import "partials/functions", "partials/variables", "partials/mixins";
 
 @include google-font("Alegreya+Sans");
 @include google-font("Titillium+Web");
 
 @include fancy-links;
 
+.error {
+  color: red;
+}
+
+.critical-error {
+  @extend .error;
+  bottom: 1px solid red;
+  font-weight: bold;
+}
+
 body {
   font-family: $text-font;
   color: $text-color;
   color: rgb(10,15,50);
   background-color: hsl(60, 50, 100);
+  font-size: em(18px);
 
   @include large-screens {
     font-size: 125%;
@@ -61,6 +50,18 @@ a {
 .warning-button {
   @include warning;
   padding: 8px 12px;
+}
+
+.cta-button {
+  @extend .warning-button;
+  @extend error;
+  @include rounded;
+  font-weight: bold;
+}
+
+.super-cta-button {
+  @extend .cta-button;
+  font-size: em(20px);
 }
 
 @include apply-to-ie-6 {
@@ -107,13 +108,28 @@ a {
   margin: auto;
 
   #content {
+    float: left;
+    width: 6*$col;
   }
 
   #sidebar {
+    float: right;
+    width: 2*$col;
+
+    li {
+      list-style-type: none;
+      padding: em(16px) em(20px);
+      border-bottom: 1px dashed #999;
+
+      &:hover {
+        background-color: #efefef;
+      }
+    }
   }
 }
 
 #footer {
+  clear: both;
   height: $footer-height;
   background-color: $ternary-color;
 }
