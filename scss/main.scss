@@ -30,6 +30,8 @@
 body {
   font-family: $text-font;
   color: $text-color;
+  color: rgb(10,15,50);
+  background-color: hsl(60, 50, 100);
 
   @include large-screens {
     font-size: 125%;
@@ -50,6 +52,10 @@ p {
 
 a {
   color: $link-color;
+
+  &:hover {
+    color: darken($link-color, 15%);
+  }
 }
 
 .warning-button {
@@ -76,6 +82,14 @@ a {
 
     a {
       color: $menu-item-color;
+      border-bottom: 1px solid transparentize($color: #fefefe, $amount: 1);
+      padding: 6px 8px;
+      transition: border-bottom 0.5s;
+      transition-timing-function: ease-in-out;
+
+      &:hover {
+        border-bottom: 1px solid opacify(#fefefe, .5);
+      }
     }
   }
   
