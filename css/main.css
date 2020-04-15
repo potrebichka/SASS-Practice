@@ -4,7 +4,7 @@ a {
   font-style: italic;
   text-decoration: none; }
 
-.error, .critical-error {
+.error, .critical-error, .cta-button, .super-cta-button {
   color: red; }
 
 .critical-error {
@@ -13,9 +13,8 @@ a {
 
 body {
   font-family: "Alegreya Sans", Arial, sans-serif;
-  color: #222222;
-  color: #0a0f32;
-  background-color: white;
+  color: #fff;
+  background-color: #22222a;
   font-size: 1.125em; }
   @media only screen and (max-width: 960px) {
     body {
@@ -32,20 +31,29 @@ p {
   font-family: "Alegreya Sans", Arial, sans-serif; }
 
 a {
-  color: #f27731; }
+  color: #c24721; }
   a:hover {
-    color: #ca510d; }
+    color: #812f16; }
 
-.warning-button, .cta-button {
+.sub-title {
+  font-style: italic; }
+
+.sub-title {
+  font-size: 1.25em; }
+
+.warning-button, .cta-button, .super-cta-button {
   background-color: orange;
   color: #fff;
   padding: 8px 12px; }
-  .warning-button:hover, .cta-button:hover {
+  .warning-button:hover, .cta-button:hover, .super-cta-button:hover {
     background-color: #ffb733; }
 
-.cta-button {
+.cta-button, .super-cta-button {
   border-radius: 6px;
   font-weight: bold; }
+
+.super-cta-button {
+  font-size: 1.25em; }
 
 * html body {
   font-size: 125%; }
@@ -53,11 +61,11 @@ a {
 #header {
   border-radius: 12px;
   border: 1px solid #999999;
-  box-shadow: 2px 0px 4px #999, 1px 1px 6px #f27731;
-  -moz-box-shadow: 2px 0px 4px #999, 1px 1px 6px #f27731;
-  -webkit-box-shadow: 2px 0px 4px #999, 1px 1px 6px #f27731;
+  box-shadow: 2px 0px 4px #999, 1px 1px 6px #c24721;
+  -moz-box-shadow: 2px 0px 4px #999, 1px 1px 6px #c24721;
+  -webkit-box-shadow: 2px 0px 4px #999, 1px 1px 6px #c24721;
   height: 60px;
-  background-color: #170a48; }
+  background-color: #42424a; }
   #header #main-menu li {
     display: inline; }
   #header #main-menu a {
@@ -87,9 +95,10 @@ a {
       padding: 1em 1.25em;
       border-bottom: 1px dashed #999; }
       #main #sidebar li:hover {
-        background-color: #efefef; }
+        background-color: #efefef;
+        color: black; }
 
 #footer {
   clear: both;
   height: 90px;
-  background-color: #ccf962; }
+  background-color: #698932; }
